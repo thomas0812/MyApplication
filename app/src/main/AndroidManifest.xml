@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.thoma.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Intro"/>
+        <activity android:name=".menumain"></activity>
+        <activity android:name=".Detailview"></activity>
+        <activity android:name=".Detailview1"></activity>
+        <activity android:name=".Afil_com_info"></activity>
+    </application>
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:resizeable="true"
+        android:anyDensity="true"
+        /><!--
+        1. 큰 스크린을 지원한다.
+        2. 일반 스크린을 지원한다. WVGA(480x800, 480x854)
+        3. 작은 스크린을 지원한다. HVGA(320x480)
+        4. 사이즈 변경이 가능하다.
+        5. 모든 해상도를 지원한다. -->
+</manifest>
