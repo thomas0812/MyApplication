@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     //마지막을 뒤로가기 버튼이 터치된 시간
-    private  long lastTimeBackPressed;
+
     private ListView m_ListView;
     private ArrayAdapter<String> m_Adapter;
     @Override
@@ -22,24 +22,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startActivity(new Intent(this,Intro.class));
-    }
-
-    @Override
-    public void onBackPressed() {
-        //1.5초 이내에 뒤로가기 버튼을 또 터치 할 경우 앱을 종료.
-        if(System.currentTimeMillis() - lastTimeBackPressed <1500){
-            finish();
-            return;
-        }
-        lastTimeBackPressed = System.currentTimeMillis();
+        findViewById(R.id.checkok).setOnClickListener(btn);
     }
     Button.OnClickListener btn = new View.OnClickListener(){
         public void onClick(View v){
             CheckBox cuscheck = (CheckBox) findViewById(R.id.cuscheck);
             EditText nameinput = (EditText) findViewById(R.id.name_input);
             String nameinput1 = nameinput.getText().toString();
-
-
             Log.v("EMS : ", "stap2");
             if (cuscheck.isChecked() == true) {
                 Log.v("EMS : ", "stap2-1");

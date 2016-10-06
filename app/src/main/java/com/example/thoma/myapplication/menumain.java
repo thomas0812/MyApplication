@@ -18,6 +18,7 @@ public class menumain extends TabActivity {
     private ArrayAdapter<String> m_Adapter;
     private ArrayAdapter<String> m_Adapter1;
     private ArrayAdapter<String> m_Adapter2;
+    private  long lastTimeBackPressed;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,5 +130,14 @@ public class menumain extends TabActivity {
         }
     };
 
-
+    @Override
+    public void onBackPressed() {
+        //1.5초 이내에 뒤로가기 버튼을 또 터치 할 경우 앱을 종료.
+        if(System.currentTimeMillis() - lastTimeBackPressed <1500){
+            finish();
+            return;
+        }
+        Toast.makeText(this,("한번더 누르시면 앱이 종료 됩니다."),Toast.LENGTH_LONG).show();
+        lastTimeBackPressed = System.currentTimeMillis();
+    }
 }
